@@ -1,13 +1,13 @@
 var Fluxxor = require('fluxxor');
 var CONSTANT = require('../constant');
 var _ = require('lodash');
-var backbone = require('backbone');
+var Model = require('backbone-model').Model;
 var trimList = require('../utils/functions').trimList;
-var cookie = require('component-cookie');
+// var cookie = require('component-cookie');
 var toNum = require('../utils/functions').toNum;
 module.exports  = Fluxxor.createStore({
   initialize: function () {
-    this.me = new Backbone.Model();
+    this.me = new Model();
     this.initStatus();
     this.bindActions(
       CONSTANT.ME_GET_SUCCESS, 'onGetSuccess',
@@ -60,20 +60,20 @@ module.exports  = Fluxxor.createStore({
   },
   onLoginSuccess: function (wrap) {
     var self = this;
-    if (wrap.isRemember) {
-      cookie('token', wrap.token,{maxage: 24*60*60*7, path:'/'});
-      cookie('time', wrap.timestamp,{maxage: 24*60*60*7, path:'/'});
-      cookie('user', wrap.phone,{maxage: 24*60*60*7, path:'/'});
-    } else {
-      cookie('token', wrap.token,{path:'/'});
-      cookie('time', wrap.timestamp,{path:'/'});
-      cookie('user', wrap.phone,{path:'/'});
-    }
+    // if (wrap.isRemember) {
+    //   cookie('token', wrap.token,{maxage: 24*60*60*7, path:'/'});
+    //   cookie('time', wrap.timestamp,{maxage: 24*60*60*7, path:'/'});
+    //   cookie('user', wrap.phone,{maxage: 24*60*60*7, path:'/'});
+    // } else {
+    //   cookie('token', wrap.token,{path:'/'});
+    //   cookie('time', wrap.timestamp,{path:'/'});
+    //   cookie('user', wrap.phone,{path:'/'});
+    // }
     this.loginStatus.desc = 'success';
     this.emit('change');
     setTimeout(function () {
       self.loginStatus.desc = null;
-    }, 1000);
+    }, 500);
   },
   onSignupSuccess: function (wrap) {
     var self = this;

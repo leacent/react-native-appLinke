@@ -1,9 +1,9 @@
 module.exports = {
-  application: require('./application')
+  application: require('./application'),
   // city: require('./city'),
   // broker: require('./broker'),
   // order: require('./order'),
-  // me: require('./me'),
+  me: require('./me')
   // card: require('./card'),
   // bill: require('./bill'),
   // bank: require('./bank'),

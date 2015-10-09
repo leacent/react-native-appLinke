@@ -1,8 +1,8 @@
 var request = require('../utils/superagent');
 var meAdaptor = require('../entity/me');
-var nprogress = require('../utils/nprogress');
+// var nprogress = require('../utils/nprogress');
 var CONSTANT = require('../constant');
-var muder = require('../utils/muder');
+// var muder = require('../utils/muder');
 
 module.exports = {
   // 获取基本信息包括收益总额、可提现总额
@@ -59,7 +59,7 @@ module.exports = {
   },
   login: function (opts) {
     var self = this;
-    nprogress.start();
+    // nprogress.start();
     var now = +new Date();
     self.dispatch(CONSTANT.ME_LOGIN_START);
     request
@@ -70,7 +70,7 @@ module.exports = {
         timeStamp: now
       })
       .end(function (err, res) {
-        nprogress.done();
+        // nprogress.done();
         if (err) {
           return self.dispatch(CONSTANT.ME_LOGIN_ERROR, '网络错误');
         }

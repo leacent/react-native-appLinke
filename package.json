@@ -6,6 +6,8 @@
     "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
+    "backbone-collection": "green-mesa/backbone-collection",
+    "backbone-model": "green-mesa/backbone-model",
     "fluxxor": "^1.7.3",
     "keymirror": "^0.1.1",
     "lodash": "^3.10.1",
