@@ -12,7 +12,7 @@ module.exports = StyleSheet.create({
     flexDirection: 'column',
     width: 240,
   },
-  toSignup: {
+  toLogin: {
     color: '#f97f5f',
     alignSelf: 'center'
   }

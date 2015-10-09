@@ -8,34 +8,29 @@ var moment = require('moment');
 var FluxMixin = require('../../mixins/flux-mixin');
 var StoreWatchMixin = require('fluxxor').StoreWatchMixin;
 
-var Login = require('../login/login');
-
 module.exports = React.createClass({
-  mixins:[FluxMixin, StoreWatchMixin('ApplicationStore')],
-  getStateFromFlux:function () {
-    return {
-      navbar: this.getFlux().store('ApplicationStore').getNavbar()
-    };
-  },
+  mixins:[FluxMixin],
+  // getStateFromFlux:function () {
+  //   return {
+  //     navbar: this.getFlux().store('ApplicationStore').getNavbar()
+  //   };
+  // },
   componentDidMount: function () {
-    setTimeout(function () {
-      this.getFlux().actions.application.setNavbar({
-        title: '这是个测试'
-      });
-    }.bind(this), 10000);
+    this.getFlux().actions.application.setNavbar({
+      title: '我的主页'
+    });
   },
   toLogin: function () {
-    this.props.toRoute({
+    this.props.navigator.push({
       name: '登录',
-      component: Login
+      index: 2
     });
   },
   render: function() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-           to React {moment().format('YYYY-MM-DD')}
-           {this.state.navbar.title || '11111'}
+           我的主页 {moment().format('YYYY-MM-DD')}
         </Text>
         <Text style={styles.instructions} onPress={this.toLogin}>
           index

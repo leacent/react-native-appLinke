@@ -76,15 +76,14 @@ module.exports  = Fluxxor.createStore({
     }, 500);
   },
   onSignupSuccess: function (wrap) {
-    var self = this;
     cookie('token', wrap.token,{path:'/'});
     cookie('time', wrap.timestamp,{path:'/'});
     cookie('user', wrap.phone,{path:'/'});
 
     this.signupStatus.desc = 'success';
     this.emit('change');
-    setTimeout(function () {
-      self.signupStatus.desc = null;
+    setTimeout(() => {
+      this.signupStatus.desc = null;
     }, 1000);
   },
   onLogOutSuccess: function () {
