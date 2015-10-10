@@ -18,7 +18,7 @@ module.exports = {
   'POST /Order/GetOrderByID': function (req, res) {
     return res.json(order);
   },
-  'POST /Member/GetMyRecommend': function (req, res) {
+  'POST /Order/GetPersonalRecommend': function (req, res) {
     return res.json(recommendList);
   }
 };

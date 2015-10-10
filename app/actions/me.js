@@ -2,7 +2,7 @@ var request = require('../utils/superagent');
 var meAdaptor = require('../entity/me');
 // var nprogress = require('../utils/nprogress');
 var CONSTANT = require('../constant');
-// var muder = require('../utils/muder');
+var muder = require('../utils/muder');
 
 module.exports = {
   // 获取基本信息包括收益总额、可提现总额

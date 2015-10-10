@@ -1,12 +1,12 @@
-var request = require('../utils/superagent');
-var CONSTANT = require('../constant/');
-var objectPath = require('object-path');
-var orderAdaptor = require('../entity/order');
-var meAdaptor = require('../entity/me');
-var muder = require('../utils/muder');
-var nprogress = require('../utils/nprogress');
-var moment = require('moment');
-
+const request = require('../utils/superagent');
+const CONSTANT = require('../constant/');
+// const objectPath = require('object-path');
+const orderAdaptor = require('../entity/order');
+// const meAdaptor = require('../entity/me');
+const muder = require('../utils/muder');
+// const nprogress = require('../utils/nprogress');
+const moment = require('moment');
+const _ = require('lodash');
 module.exports = {
   createBorrowOrder: function(opts) {
     var self = this;
@@ -125,16 +125,16 @@ module.exports = {
         }
       });
   },
-  getRecommendList: function(userKey) {
+  getRecommendList: function() {
     var self = this;
-    nprogress.start();
+    // nprogress.start();
     request
       .post('/Order/GetPersonalRecommend')
       .send({
         type: 0
       })
       .end(function(err, res) {
-        nprogress.done();
+        // nprogress.done();
         if (err) {
           return self.dispatch(CONSTANT.ORDER_RECOMMEND_LIST_ERROR,
             '网络错误');

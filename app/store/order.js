@@ -1,7 +1,7 @@
 var Fluxxor = require('fluxxor');
 var CONSTANT = require('../constant');
 var _ = require('lodash');
-var backbone = require('backbone');
+var Collection = require('backbone-collection').Collection;
 
 module.exports = Fluxxor.createStore({
   initialize: function () {
@@ -19,14 +19,14 @@ module.exports = Fluxxor.createStore({
     );
   },
   initBorrowingOrder: function () {
-    this.borrowingOrder = new Backbone.Collection();
+    this.borrowingOrder = new Collection();
     this.borrowingOrder.comparator = function (order) {
       return -order.attributes.createAt;
     };
     this.isFetchBorrowing = false;
   },
   initRecommendOrder: function () {
-    this.recommendOrder = new Backbone.Collection();
+    this.recommendOrder = new Collection();
     this.recommendOrder.comparator = function (order) {
       return -order.get('createAt');
     };
