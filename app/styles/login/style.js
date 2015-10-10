@@ -15,5 +15,9 @@ module.exports = StyleSheet.create({
   toSignup: {
     color: '#f97f5f',
     alignSelf: 'center'
+  },
+  btn: {
+    marginTop: 80,
+    marginBottom: 100
   }
 });

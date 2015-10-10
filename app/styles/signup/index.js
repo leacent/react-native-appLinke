@@ -15,5 +15,9 @@ module.exports = StyleSheet.create({
   toLogin: {
     color: '#f97f5f',
     alignSelf: 'center'
+  },
+  primaryBtn: {
+    marginTop: 80,
+    marginBottom: 100
   }
 });

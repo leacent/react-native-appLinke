@@ -42,15 +42,9 @@ module.exports = React.createClass({
   },
   componentDidUpdate: function () {
     if (this.state.loginStatus.desc === 'success'&&!this.hasToSuccess) {
-      // this.getFlux().actions.application.setTip('登录成功');
-      // return this.props.toRoute({
-      //   name: '我的主页',
-      //   component: require('../index')
-      // });
       this.toIndex();
       this.hasToSuccess = true;
     }
-    // this.toSignup();
   },
   toSignup: function (e) {
     console.log(e);
@@ -74,9 +68,7 @@ module.exports = React.createClass({
       pwd: this.state.pwd.value
     });
   },
-  layout: function (e) {
-    console.log(e.nativeEvent);
-  },
+
   setPhoneState: function (isValid, value) {
     this.setState({
       phone: {isValid: isValid, value: value}
@@ -93,11 +85,11 @@ module.exports = React.createClass({
   },
   render: function() {
     return (
-      <View style={styles.container} onLayout={this.layout}>
+      <View style={styles.container}>
         <View style={styles.form}>
           <PhoneInput onChangeText={this.setPhoneState} />
           <PwdInput onChangeText={this.setPwdState}/>
-          <PrimaryBtn onPress={this.toLogin} text="登录" status={this.isFormValid()?'active':'disabled'}/>
+          <PrimaryBtn onPress={this.toLogin} style={styles.btn} text="登录" status={this.isFormValid()?'active':'disabled'}/>
           <TouchableOpacity onPress={this.toSignup}>
             <Text style={styles.toSignup}>新用户 去注册</Text>
           </TouchableOpacity>

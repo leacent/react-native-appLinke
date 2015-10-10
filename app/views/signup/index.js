@@ -61,9 +61,9 @@ module.exports = React.createClass({
     return (
       <View style={styles.container}>
       <View style={styles.form}>
-        <PhoneInput onChangeText={this.setPhoneState} checkPhoneType="shouldExist"/>
+        <PhoneInput onChangeText={this.setPhoneState} checkPhoneType="shouldNew"/>
         <PwdInput onChangeText={this.setPwdState}/>
-        <PrimaryBtn onPress={this.toLogin} text="登录" status={this.isFormValid()?'active':'disabled'}/>
+        <PrimaryBtn onPress={this.toLogin} style={styles.primaryBtn} text="注册" status={this.isFormValid()?'active':'disabled'}/>
         <TouchableOpacity onPress={this.toLogin}>
           <Text style={styles.toLogin}>登录</Text>
         </TouchableOpacity>
