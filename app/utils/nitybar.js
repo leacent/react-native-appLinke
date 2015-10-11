@@ -1,1 +1,0 @@
-http://beletsky.net/ng-notifications-bar/
