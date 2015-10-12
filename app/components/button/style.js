@@ -4,15 +4,15 @@ var {
 } = React;
 module.exports = StyleSheet.create({
   touchable: {
-    borderRadius: 6
+    borderRadius: 6,
+    overflow: 'hidden'
   },
   primary: {
-    borderRadius: 6,
     textAlign: 'center',
     height: 44,
     padding: 14,
-    backgroundColor: '#eee',
-    color: '#a3aab5'
+    color: '#a3aab5',
+    backgroundColor: '#eee'
   },
   primaryAcitve: {
     color: '#fff',

@@ -14,7 +14,7 @@ module.exports = StyleSheet.create({
     justifyContent: 'center'
   },
   touchable:{
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
     flex: 1,
     height: 24,
     flexDirection: 'row',
